@@ -84,7 +84,7 @@ export function SuggestedNextSteps({
             <div className="flex-1 overflow-y-auto scrollbar-thin p-2.5 space-y-2">
               {isBuilding ? (
                 <>
-                  {[80, 64, 72].map((w, i) => (
+                  {[80, 64, 72].map((_, i) => (
                     <div
                       key={i}
                       className="h-20 rounded-lg bg-[#1a1a28]/40 animate-pulse border border-[#1e1e2e]"
