@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+@theme {
+  --color-nexus-bg: #0a0a0f;
+  --color-nexus-panel: #12121a;
+  --color-nexus-border: #1e1e2e;
+  --color-nexus-accent: #3b82f6;
+  --color-nexus-glow: #60a5fa;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-nexus-bg);
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.react-flow__edge-path {
+  stroke: #334155;
+  stroke-width: 1.5;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--color-nexus-accent);
+}
+
+.react-flow__controls {
+  background: rgba(18, 18, 26, 0.9) !important;
+  border: 1px solid var(--color-nexus-border) !important;
+  border-radius: 6px !important;
+}
+
+.react-flow__controls-button {
+  background: transparent !important;
+  border-bottom: 1px solid var(--color-nexus-border) !important;
+  fill: #94a3b8 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(239, 68, 68, 0.55);
+  }
+}
+
+@keyframes glow-pulse-orange {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  }
+}
+
+@keyframes canvas-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.glass-card {
+  background: rgba(18, 18, 26, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.severity-critical {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.severity-high {
+  animation: glow-pulse-orange 3s ease-in-out infinite;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 2px;
+}
